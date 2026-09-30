@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Plan: Presidential Limousine</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --text: #15191e;
+    --body: #343a42;
+    --muted: #6b727b;
+    --line: #e3e5e8;
+    --soft: #f2f3f5;
+    --accent: #0f4c81;
+    --accent-2: #3b74a8;
+    --accent-3: #9dbcd9;
+    --tint: #eaf1f8;
+    --grey-bar: #c9cdd3;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    font-variant-numeric: tabular-nums;
+  }
+  h1, h2, h3, strong { color: var(--text); }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  /* Top bar */
+  .topbar { border-bottom: 1px solid var(--line); background: var(--card); }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 54px; font-size: 13.5px; color: var(--muted); }
+  .brand { font-weight: 700; color: var(--text); letter-spacing: .01em; }
+  .brand span { color: var(--accent); }
+
+  /* Hero */
+  .hero { background: var(--card); border-bottom: 1px solid var(--line); padding: 56px 0 44px; }
+  .eyebrow { font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 12px; }
+  h1 { font-size: 42px; line-height: 1.12; margin: 0 0 14px; letter-spacing: -.015em; }
+  .lede { font-size: 19px; color: var(--body); max-width: 640px; margin: 0 0 32px; }
+  .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .meta-grid div { padding: 16px 16px 0 0; }
+  .meta-grid .k { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+  .meta-grid .v { display: block; font-size: 15px; color: var(--text); font-weight: 600; margin-top: 2px; }
+
+  /* Snapshot KPIs */
+  .snapshot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 36px 0 0; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 20px 18px; }
+  .kpi .n { font-size: 38px; font-weight: 800; color: var(--accent); line-height: 1; letter-spacing: -.02em; }
+  .kpi .t { font-size: 14.5px; color: var(--body); margin-top: 10px; line-height: 1.45; }
+
+  /* Sections */
+  section { padding: 64px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
+  .sec-num { font-size: 13px; font-weight: 800; color: var(--accent); letter-spacing: .06em; }
+  h2 { font-size: 28px; margin: 0; letter-spacing: -.01em; }
+  .sec-intro { max-width: 680px; margin: 10px 0 28px; }
+
+  /* Findings */
+  .finding { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 26px 26px 24px; margin-bottom: 18px; }
+  .f-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .f-top h3 { font-size: 19px; margin: 0; line-height: 1.35; }
+  .tag { flex-shrink: 0; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; padding: 4px 10px; border-radius: 999px; background: var(--tint); color: var(--accent); }
+  .finding > p { margin: 0 0 20px; }
+  .vis-label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--muted); margin: 0 0 10px; }
+
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
+
+  /* Consolidation diagram */
+  .merge { display: grid; grid-template-columns: 1fr 44px 1fr; align-items: center; gap: 0; background: var(--soft); border-radius: 10px; padding: 18px; margin-bottom: 12px; }
+  .merge .from { display: flex; flex-direction: column; gap: 6px; }
+  .url { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12.5px; color: var(--body); word-break: break-all; }
+  .url.redirect { border-style: dashed; color: var(--muted); }
+  .arrow { text-align: center; color: var(--accent); font-size: 22px; font-weight: 700; }
+  .to { background: var(--accent); color: #fff; border-radius: 8px; padding: 14px 16px; }
+  .to b { display: block; font-size: 15px; color: #fff; }
+  .to span { font-size: 13px; opacity: .85; }
+  .merge-cap { font-size: 13px; color: var(--muted); margin: 6px 2px 0; }
+
+  /* Comparison table */
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 700; background: var(--soft); }
+  td:first-child { color: var(--muted); font-weight: 600; width: 32%; }
+  .ok { color: var(--accent); font-weight: 700; }
+  .gap { color: var(--text); font-weight: 600; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+  .dot.a { background: var(--accent); }
+  .dot.g { background: var(--grey-bar); }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  .table-wrap table tr:last-child td { border-bottom: 0; }
+
+  /* Gantt */
+  .gantt { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 10px; margin-bottom: 22px; }
+  .g-row { display: grid; grid-template-columns: 210px 1fr; align-items: center; min-height: 44px; }
+  .g-head { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 700; min-height: 30px; }
+  .g-name { font-size: 14.5px; font-weight: 600; color: var(--text); padding-right: 12px; line-height: 1.3; }
+  .g-track { position: relative; height: 44px; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .g-track .cell { border-left: 1px solid var(--line); }
+  .g-track .cell:last-child { border-right: 1px solid var(--line); }
+  .g-weeks { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+  .bar { position: absolute; top: 11px; height: 22px; border-radius: 5px; background: var(--accent); }
+  .bar.l { background: var(--accent-2); }
+  .bar.m { background: var(--accent-3); }
+
+  /* Plan steps */
+  .steps { display: grid; gap: 12px; }
+  .step { display: grid; grid-template-columns: 46px 1fr; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+  .step .no { width: 40px; height: 40px; border-radius: 50%; background: var(--tint); color: var(--accent); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .step .wk { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .07em; }
+  .step strong { display: block; font-size: 16.5px; margin: 1px 0 3px; }
+  .step p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  /* Result charts */
+  .charts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .chart { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px 20px; display: flex; flex-direction: column; }
+  .chart h3 { font-size: 15.5px; margin: 0 0 2px; }
+  .chart .sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; }
+  .hbar { margin-bottom: 14px; }
+  .hbar .lab { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 5px; }
+  .hbar .lab b { color: var(--text); }
+  .hbar .trk { height: 12px; background: var(--soft); border-radius: 6px; overflow: hidden; }
+  .hbar .fill { height: 100%; background: var(--accent); border-radius: 6px; }
+  .hbar .fill.l { background: var(--accent-3); }
+  .big { font-size: 34px; font-weight: 800; color: var(--accent); line-height: 1; margin-top: auto; padding-top: 10px; letter-spacing: -.02em; }
+  .big small { font-size: 13.5px; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+
+  /* Ranking scale */
+  .scale { position: relative; height: 74px; margin: 6px 4px 14px; }
+  .scale .line { position: absolute; left: 0; right: 0; top: 30px; height: 4px; background: var(--soft); border-radius: 2px; }
+  .scale .p1 { position: absolute; left: 0; top: 30px; height: 4px; background: var(--accent-3); border-radius: 2px; }
+  .scale .mk { position: absolute; top: 22px; width: 20px; height: 20px; border-radius: 50%; transform: translateX(-50%); border: 3px solid var(--card); box-shadow: 0 0 0 1px var(--line); }
+  .scale .mk.b { background: var(--grey-bar); }
+  .scale .mk.a { background: var(--accent); }
+  .scale .ml { position: absolute; top: 0; transform: translateX(-50%); font-size: 12.5px; font-weight: 700; white-space: nowrap; }
+  .scale .ml.b { color: var(--muted); }
+  .scale .ml.a { color: var(--accent); }
+  .scale .tick { position: absolute; top: 50px; transform: translateX(-50%); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+  .scale .div { position: absolute; top: 20px; width: 1px; height: 24px; background: var(--muted); }
+
+  /* Next steps */
+  .next { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .nx { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 10px; padding: 20px; }
+  .nx .s { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+  .nx strong { display: block; font-size: 17px; margin: 4px 0 6px; }
+  .nx p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
+  footer { margin: 72px 0 0; border-top: 1px solid var(--line); background: var(--card); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding-top: 24px; padding-bottom: 28px; font-size: 14.5px; color: var(--muted); }
+  footer b { color: var(--text); }
+  footer a { color: var(--accent); font-weight: 700; text-decoration: none; }
+
+  @media (max-width: 760px) {
+    h1 { font-size: 32px; }
+    .lede { font-size: 17px; }
+    .meta-grid { grid-template-columns: repeat(2, 1fr); }
+    .charts, .next { grid-template-columns: 1fr; }
+    .snapshot { grid-template-columns: 1fr; gap: 10px; }
+    .kpi { display: grid; grid-template-columns: 56px 1fr; align-items: center; padding: 14px 18px; }
+    .kpi .n { font-size: 32px; }
+    .kpi .t { margin-top: 0; }
+    .merge { grid-template-columns: 1fr; gap: 8px; }
+    .arrow { transform: rotate(90deg); line-height: 1; }
+    .g-row { grid-template-columns: 118px 1fr; }
+    .g-name { font-size: 12.5px; }
+    .finding { padding: 20px 18px; }
+    .f-top { flex-direction: column; gap: 8px; }
+    h2 { font-size: 23px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brand">Usman Gull <span>&middot;</span> SEO and SEM</span>
+    <span>September 30, 2026</span>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">30 day plan prepared for</p>
+    <h1>Presidential Limousine</h1>
+    <p class="lede">Your service pages are already well written. This plan fixes the structure around them so more DC, Maryland and Northern Virginia searches turn into quote requests and calls.</p>
+    <div class="meta-grid">
+      <div><span class="k">Website</span><span class="v">presidential-limo.com</span></div>
+      <div><span class="k">Market</span><span class="v">DC, MD, Northern VA</span></div>
+      <div><span class="k">Focus</span><span class="v">Organic and local</span></div>
+      <div><span class="k">Timeline</span><span class="v">30 days</span></div>
+    </div>
+
+    <div class="snapshot">
+      <div class="kpi"><div class="n">4</div><div class="t">separate pages competing for airport transportation searches</div></div>
+      <div class="kpi"><div class="n">4</div><div class="t">different business addresses showing across the web</div></div>
+      <div class="kpi"><div class="n">0</div><div class="t">links from the Alexandria page to Arlington, Bethesda or Tysons</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>What we found</h2></div>
+    <p class="sec-intro">The DC car service and airport pages were rewritten recently, they answer real traveler questions, and the reviews on them are fresh and specific. The content is not the gap. The gaps are in how the pages connect to each other and how Google reads the business as a local entity.</p>
+
+    <div class="finding">
+      <div class="f-top"><h3>Several pages compete for the same searches</h3><span class="tag">High impact</span></div>
+      <p>When two or more pages target the same phrase, Google has to guess which one should rank, so each one ranks lower than it could. The corporate side also has a link labelled "Executive Car Service" that redirects back to the main car service page, while a separate executive page exists.</p>
+      <p class="vis-label">Proposed consolidation</p>
+      <div class="merge">
+        <div class="from">
+          <div class="url">/airport-car-service-washington-dc/</div>
+          <div class="url">/airport-shuttle-service-washington-dc/</div>
+          <div class="url">/dca-airport-shuttle/</div>
+          <div class="url">/iad-airport-shuttle/</div>
+        </div>
+        <div class="arrow">&rarr;</div>
+        <div class="to"><b>One airport hub</b><span>DCA, IAD and BWI pages each own one distinct airport search</span></div>
+      </div>
+      <div class="merge">
+        <div class="from">
+          <div class="url redirect">/washington-dc-car-service/ (redirects)</div>
+          <div class="url">/car-service-washington-dc/</div>
+          <div class="url">/executive-car-service-washington-dc/</div>
+        </div>
+        <div class="arrow">&rarr;</div>
+        <div class="to"><b>Clear corporate split</b><span>Car service and executive service each target their own keyword set</span></div>
+      </div>
+      <p class="merge-cap">Dashed box: internal link that passes through a redirect.</p>
+    </div>
+
+    <div class="finding">
+      <div class="f-top"><h3>The Northern Virginia location pages lag behind the rest of the site</h3><span class="tag">High impact</span></div>
+      <p>These are the pages that should win searches like "limo service Alexandria VA". Right now the Alexandria page reads like an older template, not like the new service pages.</p>
+      <p class="vis-label">Service pages vs Alexandria page</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Check</th><th>DC car service page</th><th>Alexandria page</th></tr></thead>
+          <tbody>
+            <tr><td>Page type</td><td><span class="dot a"></span><span class="ok">Service page</span></td><td><span class="dot g"></span><span class="gap">Filed as a blog post</span></td></tr>
+            <tr><td>Copy</td><td><span class="dot a"></span><span class="ok">Current, local detail</span></td><td><span class="dot g"></span><span class="gap">Older template text</span></td></tr>
+            <tr><td>Location accuracy</td><td><span class="dot a"></span><span class="ok">Consistent</span></td><td><span class="dot g"></span><span class="gap">Mentions Arlington, calls Alexandria a county</span></td></tr>
+            <tr><td>Nearby area links</td><td><span class="dot a"></span><span class="ok">Links to key areas</span></td><td><span class="dot g"></span><span class="gap">Reston, Vienna, Leesburg, McLean only</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="f-top"><h3>The address signals are split</h3><span class="tag">Medium impact</span></div>
+      <p>For map pack rankings, the business name, address and phone need to match everywhere Google looks, starting with the Google Business Profile.</p>
+      <p class="vis-label">Addresses currently in use</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Source</th><th>Address shown</th></tr></thead>
+          <tbody>
+            <tr><td>Website footer</td><td>1050 Connecticut Ave NW #500, Washington, DC 20036</td></tr>
+            <tr><td>Directory listing</td><td>5810 Kingstowne Center, Alexandria, VA 22315</td></tr>
+            <tr><td>Directory listing</td><td>211 N. Union St, Alexandria, VA 22314</td></tr>
+            <tr><td>Directory listing</td><td>6412 Briarmoor Ln, Alexandria, VA 22310</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>The 30 day plan</h2></div>
+    <p class="sec-intro">Sequenced so the fixes with the biggest effect on rankings go first, and every change is measured against a week one baseline.</p>
+
+    <div class="gantt">
+      <div class="g-row g-head">
+        <span></span>
+        <div class="g-weeks"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
+      </div>
+      <div class="g-row"><span class="g-name">Audit and tracking</span><div class="g-track"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><span class="bar" style="left:1%;width:23%"></span></div></div>
+      <div class="g-row"><span class="g-name">One page per intent</span><div class="g-track"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><span class="bar" style="left:13%;width:36%"></span></div></div>
+      <div class="g-row"><span class="g-name">Local entity cleanup</span><div class="g-track"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><span class="bar l" style="left:26%;width:23%"></span></div></div>
+      <div class="g-row"><span class="g-name">Location pages</span><div class="g-track"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><span class="bar l" style="left:51%;width:23%"></span></div></div>
+      <div class="g-row"><span class="g-name">Links and report</span><div class="g-track"><i class="cell"></i><i class="cell"></i><i class="cell"></i><i class="cell"></i><span class="bar m" style="left:76%;width:23%"></span></div></div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="no">1</span><div><span class="wk">Week 1</span><strong>Baseline audit and tracking check</strong><p>Search Console, GA4 and call tracking reviewed so every quote request and phone call ties back to the page and keyword that produced it.</p></div></div>
+      <div class="step"><span class="no">2</span><div><span class="wk">Week 1 to 2</span><strong>One page per search intent</strong><p>Map each airport and corporate keyword to a single page, merge or re-point the overlapping ones, and fix internal links that pass through redirects.</p></div></div>
+      <div class="step"><span class="no">3</span><div><span class="wk">Week 2</span><strong>Clean up the local entity</strong><p>Choose one primary address, then align the Google Business Profile, website schema and top directories to it so map rankings stop being split.</p></div></div>
+      <div class="step"><span class="no">4</span><div><span class="wk">Week 3</span><strong>Rebuild the priority location pages</strong><p>Start with Alexandria, Arlington and Tysons. Move them out of the blog, bring them up to the standard of the new service pages, and link them into a service area hub.</p></div></div>
+      <div class="step"><span class="no">5</span><div><span class="wk">Week 4</span><strong>Local link outreach and first report</strong><p>Pitch the hotels, wedding venues, event planners and DC associations you already work with, then report rankings, calls and quote requests against the baseline.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Comparable results</h2></div>
+    <p class="sec-intro">From SEO and local visibility work on accounts with the same goal: more high intent organic visitors who turn into enquiries.</p>
+
+    <div class="charts">
+      <div class="chart">
+        <h3>Organic growth</h3>
+        <p class="sub">Change after SEO work</p>
+        <div class="hbar"><div class="lab"><span>Organic traffic</span><b>+108%</b></div><div class="trk"><div class="fill l" style="width:45%"></div></div></div>
+        <div class="hbar"><div class="lab"><span>Form enquiries</span><b>+240%</b></div><div class="trk"><div class="fill" style="width:100%"></div></div></div>
+        <div class="big">+240%<small>enquiries</small></div>
+      </div>
+
+      <div class="chart">
+        <h3>Average ranking</h3>
+        <p class="sub">Sleep and snoring clinic, lower is better</p>
+        <div class="scale">
+          <div class="line"></div>
+          <div class="p1" style="width:47.4%"></div>
+          <span class="ml a" style="left:44.7%">9.5</span>
+          <span class="ml b" style="left:66.8%">13.7</span>
+          <span class="mk b" style="left:66.8%"></span>
+          <span class="mk a" style="left:44.7%"></span>
+          <span class="div" style="left:47.4%"></span>
+          <span class="tick" style="left:4%">Pos 1</span>
+          <span class="tick" style="left:47.4%">Pos 10</span>
+          <span class="tick" style="left:94%">Pos 20</span>
+        </div>
+        <div class="big">13.7 &rarr; 9.5<small>avg position</small></div>
+      </div>
+
+      <div class="chart">
+        <h3>Google Business Profile</h3>
+        <p class="sub">Skin care clinic, over 6 months</p>
+        <div class="hbar"><div class="lab"><span>Profile views</span><b>1,062</b></div><div class="trk"><div class="fill l" style="width:100%"></div></div></div>
+        <div class="hbar"><div class="lab"><span>Interactions</span><b>491</b></div><div class="trk"><div class="fill" style="width:46.2%"></div></div></div>
+        <div class="big">491<small>interactions</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>What happens next</h2></div>
+    <p class="sec-intro">Three steps, and nothing on the site changes without your sign off.</p>
+    <div class="next">
+      <div class="nx"><span class="s">Step 1</span><strong>15 minute call</strong><p>Confirm which services matter most right now: corporate accounts, airport runs or event bookings.</p></div>
+      <div class="nx"><span class="s">Step 2</span><strong>Viewer access</strong><p>Search Console, GA4 and the Google Business Profile, read only to start.</p></div>
+      <div class="nx"><span class="s">Step 3</span><strong>First week</strong><p>You receive the keyword to page map and the fix list, ranked by expected effect on quote requests.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b>Usman Gull</b> &middot; Google Ads and SEO Specialist</span>
+    <a href="https://usmangullpro.com">usmangullpro.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
